@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Create HTML elements to display the JSON data
             const nameElement = document.createElement("p");
-            nameElement.textContent = "Link: " + data.paylink;
+            nameElement.textContent = "Link: " + data.response;
         
             dataDisplay.appendChild(nameElement);
  
