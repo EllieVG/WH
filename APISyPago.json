@@ -1,19 +1,7 @@
 
 	[
 		{
-			"name": "TEST",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
+			
 			"request": {
 				"auth": {
 					"type": "bearer",
