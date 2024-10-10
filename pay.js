@@ -5,8 +5,8 @@ public class OTP {
     static String cuenta = "01910054542154028418";
     static String cel = "041210133088;
     static String token = "access_token";
+
     
-     // Cliente Http
     public static final MediaType JSON = MediaType.get("application/json");
     OkHttpClient client = new OkHttpClient();
     
@@ -40,14 +40,7 @@ public class OTP {
         System.out.println(resp);
     }
     
-    
-/**
-* Metodo para invocar al servicio en Sypago
-* @param url URL del servicio
-* @param json  Datos en formato JSON del servicio
-* @return String con el TOKEN suministrado por el ecosistema de Sypago.
-     * @throws java.io.IOException
-*/     
+       
     public String getOTP(String url, String json, String token) throws IOException {
         
         RequestBody body = RequestBody.create(json, JSON);
