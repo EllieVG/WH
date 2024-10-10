@@ -31,7 +31,7 @@ class OTP{
         JsonDocument jsonDoc = JsonDocument.Parse(resultado);
         string accessToken = jsonDoc.RootElement.GetProperty("access_token").GetString();
 
-        //Console.WriteLine(accessToken);
+        Console.WriteLine(accessToken);
         var internal_id = new Random().Next(1, 999999).ToString("000000") + new Random().Next(1, 999999).ToString("000000");
         var group_id = new Random().Next(1, 999999).ToString("000000") + new Random().Next(1, 999999).ToString("000000");
 
@@ -42,9 +42,9 @@ class OTP{
         contenido = new StringContent(body, Encoding.UTF8, "application/json");
         respuesta = await cliente.PostAsync(OTP_PATH, contenido);
         resultado = await respuesta.Content.ReadAsStringAsync();
-        //jsonDoc = JsonDocument.Parse(resultado);
+        jsonDoc = JsonDocument.Parse(resultado);
 
-        //string transaction_id = jsonDoc.RootElement.GetProperty("transaction_id").GetString();  
+        string transaction_id = jsonDoc.RootElement.GetProperty("transaction_id").GetString();  
         Console.WriteLine(resultado);
     }
 }
