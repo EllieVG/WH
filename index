@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta target="UFT-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+
+      if (window.trustedTypes && window.trustedTypes.createPolicy) {
+
+        window.trustedTypes.createPolicy('default', {
+
+        createHTML: string => string,
+
+        createScriptURL: string => string,
+
+        createScript: string => string,
+
+      });
+
+      }
+
+    </script>
+    
+  </head>
+  <body>
+    
+    
+    
+  </body>
+</html>
