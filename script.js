@@ -1,15 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
-    fetch('APISyPago.json')
-        .then(response => response.json())
-        .then(data => {
-            const dataDisplay = document.getElementById("dataDisplay");
-
-            // Create HTML elements to display the JSON data
-            const nameElement = document.createElement("p");
-            nameElement.textContent = "Link: " + data.response;
-        
-            dataDisplay.appendChild(nameElement);
- 
-        })
-        .catch(error => console.error("Error fetching JSON data:", error));
-});
+document.getElementById("loadMore").onclick = function(){
+/* Supporting Older IE Browsers */
+var request;
+if(window.XMLHttpRequest){
+request = new XMLHttpRequest();
+}
+else {
+request = new  ActiveXObject("Microsoft.XMLHTTP");
+}
+request.open('GET', 'APISyPago.json');
+request.onreadystatechange = function(){
+if((request.readyState === 4) && (request.status === 200)){
+var items = JSON.parse(request.responseText);
+console.log(items);
+var output = "<ul>";
+for(var key in items){
+output += "<li>" + items[key].bio + "</li>";
+}
+output += "</ul>";
+document.getElementById("update").innerHTML = output;
+}
+};		request.send();
+}
