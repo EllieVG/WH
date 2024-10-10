@@ -1,10 +1,4 @@
-{
-	"info": {
-		"_postman_id": "1705322e-cb20-44e6-a31b-cbad78bbfdec",
-		"name": "API SyPago",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30493430"
-	},
+
 	"item": [
 		{
 			"name": "TEST",
