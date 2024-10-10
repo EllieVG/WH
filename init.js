@@ -1,6 +1,10 @@
 $(funtion (){
-  loadScript('js/pay.js', paySetup);
+  loadScript('js/pay.js', paySetup)
 });
+
+var paySetup = function (){
+  console.log('pay activo')
+}
 
 funtion loadScript (url, callback) {
 
