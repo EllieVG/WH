@@ -1,23 +1,26 @@
-document.getElementById("loadMore").onclick = function(){
-/* Supporting Older IE Browsers */
-var request;
-if(window.XMLHttpRequest){
-request = new XMLHttpRequest();
+document.addEventListener("click", function (event) {
+
+  if (!event.target.matches("#button")) return;
+
+  fetch("https://official-joke-api.appspot.com/random_joke")
+    .then((response) => response.json())
+    .then((data) => renderJoke(data))
+    .catch(() => renderError());
+});
+
+function renderJoke(data) {
+
+  const setup = document.getElementById("setup");
+  const punchline = document.getElementById("punchline");
+  const error = document.getElementById("error");
+
+
+  error.innerHTML = "";
+  setup.innerHTML = data.setup;
+  punchline.innerHTML = data.punchline;
 }
-else {
-request = new  ActiveXObject("Microsoft.XMLHTTP");
-}
-request.open('GET', 'APISyPago.json');
-request.onreadystatechange = function(){
-if((request.readyState === 4) && (request.status === 200)){
-var items = JSON.parse(request.responseText);
-console.log(items);
-var output = "<ul>";
-for(var key in items){
-output += "<li>" + items[key].bio + "</li>";
-}
-output += "</ul>";
-document.getElementById("update").innerHTML = output;
-}
-};		request.send();
+
+function renderError() {
+  const error = document.getElementById("error");
+  error.innerHTML = "Whoops, something went wrong. Please try again later!";
 }
