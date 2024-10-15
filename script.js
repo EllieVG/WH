@@ -2,7 +2,7 @@ document.addEventListener("click", function (event) {
 
   if (!event.target.matches("#button")) return;
 
-  fetch("https://api.postman.com/collections/30493430-35d4215c-804a-47bf-9335-f2ff5f2ecfe2?access_key=PMAT-01JA8WW3W5V8GCEVTWR6XBGYDS")
+  fetch("https://official-joke-api.appspot.com/random_joke")
     .then((response) => response.json())
     .then((data) => renderJoke(data))
     .catch(() => renderError());
@@ -11,7 +11,7 @@ document.addEventListener("click", function (event) {
 function renderJoke(data) {
 
   const setup = document.getElementById("setup");
-  const punchline = document.getElementById("transaction_id");
+  const punchline = document.getElementById("punchline");
   const error = document.getElementById("message");
 
 
