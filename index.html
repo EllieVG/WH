@@ -3,29 +3,12 @@
   <head>
     <meta target="UFT-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script>
-
-      if (window.trustedTypes && window.trustedTypes.createPolicy) {
-
-        window.trustedTypes.createPolicy('default', {
-
-        createHTML: string => string,
-
-        createScriptURL: string => string,
-
-        createScript: string => string,
-
-      });
-
-      }
-
-    </script>
     <script type = "text/javascript" src = "jquery-1.10.2.min.js"></script>
-   <script type = "text/javascript">
-     $(document).ready(getAJAX);
-     function getAJAX(){
-      $("#output").load("hello.txt");
-     }
+     <script type = "text/javascript">
+       $(document).ready(getAJAX);
+      function getAJAX(){
+        $("#output").load("hello.txt");
+      }
    </script>
     
   </head>
