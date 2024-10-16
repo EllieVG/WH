@@ -33,7 +33,7 @@ document.addEventListener("click", function (event) {
 
 function response(data) {
 
-  const setup = document.getElementById("transaction_id);
+  const setup = document.getElementById("transaction_id");
   const punchline = document.getElementById("pay_link");
   const operation = document.getElementById("operation_secret");
 
